@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { ScrollView, Text, TextInput, View, ViewStyle } from "react-native";
-import { getFromAsyncStorage, saveToAsyncStorage } from "../../lib/AsyncStorageHelper";
-import { detailScreenStyles } from "./detailScreenStyles";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Strings } from "../../resources/Strings";
+import React, { useEffect, useState } from 'react';
+import { ScrollView, Text, TextInput, View, ViewStyle } from 'react-native';
+import { getFromAsyncStorage, saveToAsyncStorage } from '../../lib/AsyncStorageHelper';
+import { detailScreenStyles } from './detailScreenStyles';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Strings } from '../../resources/Strings';
 
 type DetailScreenProps = {
   Issue: {
-    id: number
-    title: string
-    state: string
-    body: string
+    id: number;
+    title: string;
+    state: string;
+    body: string;
   };
 };
 
-type Props = NativeStackScreenProps<DetailScreenProps, "Issue">;
+type Props = NativeStackScreenProps<DetailScreenProps, 'Issue'>;
 
 export const DetailScreen = (props: Props) => {
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState('');
   useEffect(() => {
     getComment();
   }, []);
@@ -31,13 +31,12 @@ export const DetailScreen = (props: Props) => {
     await saveToAsyncStorage(props.route.params.id.toString(), text);
   }
 
-  const textContainer = (style: ViewStyle, title: string, body: string) =>
+  const textContainer = (style: ViewStyle, title: string, body: string) => (
     <View style={style}>
-      <Text style={detailScreenStyles.textTitle}>
-        {title}
-      </Text>
+      <Text style={detailScreenStyles.textTitle}>{title}</Text>
       <Text style={detailScreenStyles.text}>{body}</Text>
-    </View>;
+    </View>
+  );
 
   return (
     <View style={detailScreenStyles.container}>
@@ -54,6 +53,7 @@ export const DetailScreen = (props: Props) => {
         value={comment}
         multiline={true}
         style={detailScreenStyles.commentInput}
-      /></View>
+      />
+    </View>
   );
 };

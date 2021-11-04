@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 
 const PER_PAGE = 20;
-const BASE_URL = "https://api.github.com/repos/facebook/react-native/";
-const TIME_OUT =3000;
+const BASE_URL = 'https://api.github.com/repos/facebook/react-native/';
+const TIME_OUT = 3000;
 
 enum Request {
-  Issues = "issues"
+  Issues = 'issues',
 }
 
 export interface IssueData {
@@ -22,9 +22,7 @@ export interface Issue {
 
 export const axiosInstance = axios.create({
   baseURL: BASE_URL,
-  timeout: TIME_OUT
+  timeout: TIME_OUT,
 });
 
-export const getIssues = (page: number) =>
-  axiosInstance.get(Request.Issues, { params: { page, per_page: PER_PAGE } });
-
+export const getIssues = (page: number) => axiosInstance.get(Request.Issues, { params: { page, per_page: PER_PAGE } });

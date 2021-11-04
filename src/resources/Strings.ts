@@ -1,8 +1,7 @@
 export const Strings = {
-  retry:'Ponów Próbę',
+  retry: 'Ponów Próbę',
   comment: 'Komentarz',
   description: 'Opis:',
   status: 'Status:',
-  title: 'Tytuł:'
-}
-
+  title: 'Tytuł:',
+};

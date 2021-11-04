@@ -1,18 +1,18 @@
-import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import React from 'react';
+import { Image, StyleSheet, View } from 'react-native';
 
-const imagePath = "../../assets/icons/logo/logo.png";
+const imagePath = '../../assets/icons/logo/logo.png';
 
 const styles = StyleSheet.create({
   headerStyle: {
     margin: 5,
     flex: 1,
-    alignItems: "center"
+    alignItems: 'center',
   },
   logoIcon: {
     height: 30,
-    resizeMode: "contain"
-  }
+    resizeMode: 'contain',
+  },
 });
 
 const logo = (
@@ -23,14 +23,16 @@ const logo = (
 
 export const MainRouteConfigMap = {
   List: {
-    name: "listScreen", options: {
-      headerTitle: () => logo
-    }
+    name: 'listScreen',
+    options: {
+      headerTitle: () => logo,
+    },
   },
   Detail: {
-    name: "detailScreen", options: {
+    name: 'detailScreen',
+    options: {
       headerTitle: () => logo,
-      headerRight: () => <View />
-    }
-  }
+      headerRight: () => <View />,
+    },
+  },
 };
